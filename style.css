@@ -1,3 +1,9 @@
 table, th{
     border: 1px solid black;
 }
+
+.modal{
+    display: none; /*Hidden*/
+    position: fixed;
+    z-index: 1;
+}
