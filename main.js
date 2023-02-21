@@ -4,6 +4,8 @@ var modal = document.getElementById("filterModal");
 var btn = document.getElementById("filterBtn");
 //Get the span element the closes the modal
 var span = document.getElementsByClassName("close")[0];
+var row = document.getElementById("row").innerHTML 
+console.log(row)
 
 //Once the user clicks the button, the modal appears
 btn.onclick = () => {
