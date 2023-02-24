@@ -38,3 +38,7 @@ table, th, td{
     text-decoration: none;
     cursor: pointer;
 }
+
+#msg{
+    color: red;
+}

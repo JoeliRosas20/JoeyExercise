@@ -23,3 +23,23 @@ window.onclick = (e) =>{
         modal.style.display = "none"
     }
 }
+
+let form = document.getElementById("form");
+let textInput = document.getElementById("textInput");
+let msg = document.getElementById("msg")
+
+form.addEventListener("submit", (e) =>{
+    console.log(`form.addEventListener called`)
+    e.preventDefault();
+    formValidation();
+})
+
+let formValidation = () => {
+    if(textInput.value === ""){
+        console.log("formValidation called Failure")
+        msg.innerHTML = "It cannot be blank"
+    }else{
+        console.log("formValidation called Success")
+        msg.innerHTML = ""
+    }
+}
