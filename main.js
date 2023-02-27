@@ -30,6 +30,7 @@ let setsInput = document.getElementById("setsInput");
 let repsInput = document.getElementById("repsInput");
 let poundsInput = document.getElementById("poundsInput");
 let msg = document.getElementById("msg")
+let msg2 = document.getElementById("msg2")
 let data = [];
 
 form.addEventListener("submit", (e) =>{
@@ -46,7 +47,9 @@ let formValidation = () => {
         console.log("formValidation called Success")
         msg.innerHTML = ""
     }
-    
+    if(setsInput.value < 0){
+        msg2.innerHTML = "It cannot be negative"
+    }
 }
 
 let acceptData = () =>{
