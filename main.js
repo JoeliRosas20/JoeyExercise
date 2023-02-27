@@ -50,6 +50,11 @@ let formValidation = () => {
     if(setsInput.value < 0){
         msg2.innerHTML = "It cannot be negative"
     }
+    if(isNaN(setsInput.value)){
+        msg2.innerHTML = "It needs to be a number"
+    }else{//This will clear the warning
+        msg2.innerHTML = ""
+    }
 }
 
 let acceptData = () =>{
