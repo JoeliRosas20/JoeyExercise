@@ -26,7 +26,11 @@ window.onclick = (e) =>{
 
 let form = document.getElementById("form");
 let textInput = document.getElementById("textInput");
+let setsInput = document.getElementById("setsInput");
+let repsInput = document.getElementById("repsInput");
+let poundsInput = document.getElementById("poundsInput");
 let msg = document.getElementById("msg")
+let data = [];
 
 form.addEventListener("submit", (e) =>{
     console.log(`form.addEventListener called`)
@@ -42,4 +46,13 @@ let formValidation = () => {
         console.log("formValidation called Success")
         msg.innerHTML = ""
     }
+    
+}
+
+let acceptData = () =>{
+    data.push({
+        text: textInput.value,
+    })
+    localStorage.setItem("data", JSON.stringify(data))
+    console.log(data)
 }
