@@ -39,6 +39,6 @@ table, th, td{
     cursor: pointer;
 }
 
-#msg, #msg2{
+#msg, #msg2, #msg3, #msg4{
     color: red;
 }
