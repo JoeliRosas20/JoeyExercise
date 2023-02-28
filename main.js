@@ -43,11 +43,26 @@ form.addEventListener("submit", (e) =>{
 })
 
 let formValidation = () => {
+    //Value
+    let text = textInput.value;
     let set = setsInput.value;
     let rep = repsInput.value;
     let pound = poundsInput.value;
-    //Name validatio
-    if(textInput.value === ""){
+    //Is it blank
+    let textIsEmpty = text === ""
+    let repIsEmpty = rep === ""
+    let setIsEmpty = set === ""
+    let poundIsEmpty = pound === ""
+    //Is a negative
+    let setIsNegative = set < 0
+    let repIsNegative = rep < 0
+    let poundIsNegative = pound < 0
+    //Is not a number
+    let setNotANum = isNaN(set)
+    let repNotANum = isNaN(rep)
+    let poundNotANum = isNaN(pound)
+    //Name validation
+    if(textIsEmpty){
         console.log("formValidation called Failure")
         msg.innerHTML = "It cannot be blank"
     }else{
@@ -55,38 +70,39 @@ let formValidation = () => {
         msg.innerHTML = ""
     }
     //Sets validation
-    if(set < 0){
+    if(setIsNegative){
+        console.log("called msg2")
         msg2.innerHTML = "It cannot be negative"
     }
-    else if(isNaN(set)){
+    else if(setNotANum){
         msg2.innerHTML = "It needs to be a number"
-    }else if(set === ""){
+    }else if(setIsEmpty){
         msg2.innerHTML = "It cannot be blank"
-    }else{//This will clear the warning
+    }else{
         msg2.innerHTML = ""
     }
     //Reps validation
-    if(rep < 0){
+    if(repIsNegative){
         msg3.innerHTML = "It cannot be negative"
-    }else if(isNaN(rep)){
+    }else if(repNotANum){
         msg3.innerHTML = "It needs to be a number"
-    }else if(rep === ""){
+    }else if(repIsEmpty){
         msg3.innerHTML = "It cannot be blank"
     }else{
         msg3.innerHTML = ""
     }
     //Pounds validation
-    if(pound < 0){
+    if(poundIsNegative){
         msg4.innerHTML = "It cannnot be negative"
-    }else if(isNaN(pound)){
+    }else if(poundNotANum){
         msg4.innerHTML = "It needs to be a number"
-    }else if(pound === ""){
+    }else if(poundIsEmpty){
         msg4.innerHTML = "It cannot be blank"
     }else{
         msg4.innerHTML = ""
     }
-
-    if(textInput.value !== "" && (set !== "" && !isNaN(set)) && (rep !== "" && !isNaN(rep)) && (pound !== "" && !isNaN(pound))){
+    //Send the data once its ready
+    if(!textIsEmpty && (!setIsEmpty && !setNotANum && !setIsNegative) && (!repIsEmpty && !repNotANum && !repIsNegative) && (!poundIsEmpty && !poundNotANum && !poundIsNegative)){
         acceptData();
         add.setAttribute("data-bs-dismiss", "modal")//This changes the html to dismiss
         add.click();//This clicks the dismiss button
