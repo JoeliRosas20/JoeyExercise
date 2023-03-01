@@ -19,9 +19,11 @@ body {
     background-color: #fff;
     width: 300px;
     height: 500px;
-    border: 5px solid #abcea1;
+    border: 5px solid #4ed6ee;
     border-radius: 8px;
     padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*The following 2 create cards for our tasks*/
@@ -32,8 +34,8 @@ body {
 }
 
 #exercises div{
-    border: 3px solid #abcea1;
-    background-color: #e2eede;
+    border: 3px solid #4ed6ee;
+    background-color: #cfe4f0;
     border-radius: 6px;
     padding: 5px;
     display: grid;

@@ -12,7 +12,6 @@ let exercises = document.getElementById("exercises")
 let data = [];
 
 form.addEventListener("submit", (e) =>{
-    console.log(`form.addEventListener called`)
     e.preventDefault();
     formValidation();
 })
@@ -39,15 +38,12 @@ let formValidation = () => {
     let poundNotANum = isNaN(pound)
     //Name validation
     if(textIsEmpty){
-        console.log("formValidation called Failure")
         msg.innerHTML = "It cannot be blank"
     }else{
-        console.log("formValidation called Success")
         msg.innerHTML = ""
     }
     //Sets validation
     if(setIsNegative){
-        console.log("called msg2")
         msg2.innerHTML = "It cannot be negative"
     }
     else if(setNotANum){
@@ -149,5 +145,6 @@ let editTask = (e) =>{
     setsInput.value = selectedTask.children[1].innerHTML;
     repsInput.value = selectedTask.children[2].innerHTML;
     poundsInput.value = selectedTask.children[3].innerHTML;
+    //This will delete the task and display the updated exercise
     deleteTask(e)
 }
