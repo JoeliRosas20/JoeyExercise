@@ -9,8 +9,11 @@ let msg3 = document.getElementById("msg3")
 let msg4 = document.getElementById("msg4")
 let add = document.getElementById("add")
 let exercises = document.getElementById("exercises")
+let bicep = document.getElementById("bicep")
+let back = document.getElementById("back")
 let data = [];
 
+//The start of the form sending the data
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
     formValidation();
@@ -92,7 +95,8 @@ let acceptData = () =>{
         rep: repsInput.value,
         pound: poundsInput.value,
     })
-    localStorage.setItem("data", JSON.stringify(data))
+    pushDataToStorage()
+    //localStorage.setItem("data", JSON.stringify(data))
     console.log(data)
     createTasks()
 }
@@ -147,4 +151,15 @@ let editTask = (e) =>{
     poundsInput.value = selectedTask.children[3].innerHTML;
     //This will delete the task and display the updated exercise
     deleteTask(e)
+}
+
+let pushDataToStorage = () =>{
+    if(document.URL.includes("biceps.html")){
+        console.log("Bicep")
+        localStorage.setItem("bicep", JSON.stringify(data))
+    }
+    else if (document.URL.includes("back.html")){
+        console.log("Back")
+        localStorage.setItem("back", JSON.stringify(data))
+    }
 }
