@@ -139,3 +139,15 @@ let deleteTask = (e) =>{
     localStorage.setItem("data", JSON.stringify(data));
     console.log(data);
 }
+
+//Editing the exercise
+let editTask = (e) =>{
+    //This will target the exercise we want to edit
+    let selectedTask = e.parentElement.parentElement;
+    //This will edit the task in the array
+    textInput.value = selectedTask.children[0].innerHTML;
+    setsInput.value = selectedTask.children[1].innerHTML;
+    repsInput.value = selectedTask.children[2].innerHTML;
+    poundsInput.value = selectedTask.children[3].innerHTML;
+    deleteTask(e)
+}
