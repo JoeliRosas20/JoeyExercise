@@ -96,7 +96,6 @@ let acceptData = () =>{
         pound: poundsInput.value,
     })
     pushDataToStorage()
-    //localStorage.setItem("data", JSON.stringify(data))
     console.log(data)
     createTasks()
 }
@@ -152,6 +151,21 @@ let editTask = (e) =>{
     //This will delete the task and display the updated exercise
     deleteTask(e)
 }
+
+(()=>{
+    //data = JSON.parse(localStorage.getItem("bicep")) || [];
+    if(document.URL.includes("biceps.html")){
+        console.log("Bicep")
+        data = JSON.parse(localStorage.getItem("bicep")) || [];
+    }
+    else if (document.URL.includes("back.html")){
+        console.log("Back")
+        data = JSON.parse(localStorage.getItem("back")) || [];
+    }
+    createTasks()
+    console.log("Local storage")
+    console.log(data)
+})();
 
 let pushDataToStorage = () =>{
     if(document.URL.includes("biceps.html")){
