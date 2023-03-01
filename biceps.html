@@ -10,32 +10,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 
 <body>
+    <a href="index.html">Home</a>
     <div class="app">
         <h1 class="mb-3">Biceps</h1>
-
-        <div class="bicepTable">
-            <button id="filterBtn">Filter</button>
-            <table style="width: 100%">
-                <tr>
-                    <th>Workout</th>
-                    <th>Variant</th>
-                    <th>Sets</th>
-                    <th>Reps</th>
-                    <th>lbs</th>
-                </tr>
-                <tr>
-                    <td>Bicep Curl</td>
-                    <td>Dumbbell</td>
-                    <td>5</td>
-                    <td>10</td>
-                    <td id="row">20</td>
-                </tr>
-            </table>
-        </div>
 
         <!--Add an exercise-->
         <div id="addExercise" data-bs-toggle="modal" data-bs-target="#form">
@@ -47,7 +28,7 @@
         <!--The header has a margin that sets the top and bottom with the size of 3-->
         <h3 class="text-center my-3">Exercises</h3>
         <div id="exercises"> </div>
-    
+
         <!--Filter Modal-->
         <div id="filterModal" class="modal">
             <div class="modal-content">
@@ -55,8 +36,6 @@
                 <p>Filter</p>
             </div>
         </div>
-
-        <a href="index.html">Home</a>
         
         <!--The modal-->
         <!--This is a modal that fades when it opens and closes. It's ID is form. It cannot be highlighted when the tab button is pressed. It is accessible friendly (ARIA) and its hidden by default.-->

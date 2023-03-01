@@ -1,7 +1,3 @@
-table, th, td{
-    border: 1px solid black;
-}
-
 /*Modal background*/
 .modal{
     display: none; /*Hidden*/
@@ -41,4 +37,24 @@ table, th, td{
 
 #msg, #msg2, #msg3, #msg4{
     color: red;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0 50px;
+    background-color: #e5e5e5;
+    overflow: hidden;
+    /*display: flex; /*This squeezes the content in the site
+    justify-content: center; /*This places the content in the center
+    align-items: center;
+    height: 100vh;/*This lowers the content from the top*/
+}
+
+.app{
+    background-color: #fff;
+    width: 300px;
+    height: 500px;
+    border: 5px solid #abcea1;
+    border-radius: 8px;
+    padding: 15px;
 }

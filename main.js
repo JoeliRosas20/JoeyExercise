@@ -1,29 +1,3 @@
-//Get the modal
-var modal = document.getElementById("filterModal");
-//Get the button that closes the modal
-var btn = document.getElementById("filterBtn");
-//Get the span element the closes the modal
-var span = document.getElementsByClassName("close")[0];
-var row = document.getElementById("row").innerHTML 
-console.log(row)
-
-//Once the user clicks the button, the modal appears
-btn.onclick = () => {
-    modal.style.display = "block"
-}
-
-//For the close button on the modal
-span.onclick = () => {
-    modal.style.display = "none"
-}
-
-//For the modal to close when the user clicks anywhere on the screen
-window.onclick = (e) =>{
-    if(e.target == modal){
-        modal.style.display = "none"
-    }
-}
-
 let form = document.getElementById("form");
 let textInput = document.getElementById("textInput");
 let setsInput = document.getElementById("setsInput");
@@ -34,6 +8,7 @@ let msg2 = document.getElementById("msg2")
 let msg3 = document.getElementById("msg3")
 let msg4 = document.getElementById("msg4")
 let add = document.getElementById("add")
+let exercises = document.getElementById("exercises")
 let data = [];
 
 form.addEventListener("submit", (e) =>{
@@ -42,6 +17,7 @@ form.addEventListener("submit", (e) =>{
     formValidation();
 })
 
+//Validating what is filled in the form
 let formValidation = () => {
     //Value
     let text = textInput.value;
@@ -112,6 +88,7 @@ let formValidation = () => {
     }
 }
 
+//Accept the date filled in the form unto the 
 let acceptData = () =>{
     data.push({
         name: textInput.value,
@@ -121,4 +98,34 @@ let acceptData = () =>{
     })
     localStorage.setItem("data", JSON.stringify(data))
     console.log(data)
+    createTasks()
+}
+
+//Creating the tasks so it can be displayed
+let createTasks = () =>{
+    exercises.innerHTML = "";
+    data.map((x,y) =>{
+        return (exercises.innerHTML += `
+        <div id=${y}>
+            <span class="fw-bold">${x.name}</span>
+            <span class="small text-secondary">${x.set}</span>
+            <span class="small text-secondary">${x.rep}</span>
+            <span class="small text-secondary">${x.pound}</span>
+
+            <span class="options">
+                <i onClick="editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i> 
+                <i onClick="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
+            </span>
+        </div>
+        `)
+    })
+    resetForm()
+}
+
+//Clearing the form once the accept button is pressed
+let resetForm = () =>{
+    textInput.value = "";
+    setsInput.value = "";
+    repsInput.value = "";
+    poundsInput.value = "";
 }
