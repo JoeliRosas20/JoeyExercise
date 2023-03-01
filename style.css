@@ -1,3 +1,4 @@
+/*For the error message in the form*/
 #msg, #msg2, #msg3, #msg4{
     color: red;
 }
@@ -13,6 +14,7 @@ body {
     height: 100vh;/*This lowers the content from the top*/
 }
 
+/*The app that adds, displays, delete, and updates content*/
 .app{
     background-color: #fff;
     width: 300px;

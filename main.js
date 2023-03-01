@@ -129,3 +129,13 @@ let resetForm = () =>{
     repsInput.value = "";
     poundsInput.value = "";
 }
+
+//Deleting the exercise
+let deleteTask = (e) =>{
+    //This removes the icon first, then deletes the span its in, then deletes the div its in
+    e.parentElement.parentElement.remove();
+    //This removes the content from the array
+    data.splice(e.parentElement.parentElement.id, 1)
+    localStorage.setItem("data", JSON.stringify(data));
+    console.log(data);
+}
