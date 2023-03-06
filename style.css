@@ -2,17 +2,13 @@
 #msg, #msg2, #msg3, #msg4{
     color: red;
 }
-
+/*
 body {
     font-family: sans-serif;
     margin: 0 50px;
     background-color: #e5e5e5;
     overflow: hidden;
-    /*display: flex; /*This squeezes the content in the site
-    justify-content: center; /*This places the content in the center
-    align-items: center;
-    height: 100vh;/*This lowers the content from the top*/
-}
+}*/
 
 /*The app that adds, displays, delete, and updates content*/
 .app{
@@ -22,17 +18,18 @@ body {
     border: 5px solid #4ed6ee;
     border-radius: 8px;
     padding: 15px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 100px;
 }
 
 /*The following 2 create cards for our tasks*/
+/*This one is the foundation*/
 #exercises {
     display: grid;
     grid-template-columns: 1fr;
     gap: 14px;
 }
 
+/*These are for the cards */
 #exercises div{
     border: 3px solid #4ed6ee;
     background-color: #cfe4f0;
@@ -42,7 +39,7 @@ body {
     gap: 4px;
 }
 
-/**/
+/*The delete and edit options*/
 #exercises div .options{
     justify-self: center;
     display: flex;
@@ -51,4 +48,29 @@ body {
 
 #exercises div .options i{
     cursor: pointer;
+}
+
+@media only screen and (max-width: 980px) {
+    #home{
+        align-items: center;
+    }
+    .app{
+        width: 800px;
+        height: 1000px;
+        border: 10px solid #4ed6ee;
+        margin-left: 50px;
+    }
+    #addExercise{
+        height: 50px;
+        font-size: 50px;
+    }
+    #muscleTitle{
+        font-size: 2.5cm;
+    }
+    #exercisesH3{
+        font-size: 2cm;
+    }
+    #exercises{
+
+    }
 }

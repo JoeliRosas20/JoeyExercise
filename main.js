@@ -107,9 +107,9 @@ let createTasks = () =>{
         return (exercises.innerHTML += `
         <div id=${y}>
             <span class="fw-bold">${x.name}</span>
-            <span class="small text-secondary">${x.set}</span>
-            <span class="small text-secondary">${x.rep}</span>
-            <span class="small text-secondary">${x.pound}</span>
+            <span class="small text-secondary">Sets: ${x.set}</span>
+            <span class="small text-secondary">Reps: ${x.rep}</span>
+            <span class="small text-secondary">Pounds: ${x.pound}</span>
 
             <span class="options">
                 <i onClick="editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i> 
