@@ -117,9 +117,24 @@ nav .fa{
     #home{
         align-items: center;
     }
+    #homeContainer{
+        margin: auto;
+    }
+    #homePage h1{
+        font-size: 80px;
+    }
+    #homePage h3{
+        font-size: 60px;
+    }
+    #homePage ul li{
+        font-size: 40px;
+    }
+    /*These are the links to the other pages*/
     .nav-links ul li{
         display: block;
+        font-size: 30px;
     }
+    /*This is the whole navigation bar*/
     .nav-links{
         position: fixed;
         background: #f44336;
