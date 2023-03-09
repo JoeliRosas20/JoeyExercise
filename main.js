@@ -11,6 +11,7 @@ let add = document.getElementById("add")
 let exercises = document.getElementById("exercises")
 let bicep = document.getElementById("bicep")
 let back = document.getElementById("back")
+let navLinks = document.getElementById("navLinks")
 let data = [];
 
 //The start of the form sending the data
@@ -153,6 +154,15 @@ let editTask = (e) =>{
     deleteTask(e)
 }
 
+//Toggle menu
+let showMenu = () =>{
+    navLinks.style.right = "0";
+}
+let hideMenu = () =>{
+    navLinks.style.right = "-200px"
+}
+
+//This makes the content be seen whenever we enter the site
 (()=>{
     //data = JSON.parse(localStorage.getItem("bicep")) || [];
     if(document.URL.includes("biceps.html")){
