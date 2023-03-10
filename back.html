@@ -11,9 +11,24 @@
 </head>
 
 <body>
-    <a href="index.html">Home</a>
-    <div class="app" id="back">
-        <h1 class="mb-3">Back</h1>
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biceps.html">Bicep</a></li>
+                <li><a href="triceps.html">Tricep</a></li>
+                <li><a href="chest.html">Chest</a></li>
+                <li><a href="abs.html">Abs</a></li>
+                <li><a href="legs.html">Legs</a></li>
+                <li><a href="shoulders.html">Shoulder</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="app">
+        <h1 class="mb-3" id="muscleTitle">Back</h1>
 
         <!--Add an exercise-->
         <div id="addExercise" data-bs-toggle="modal" data-bs-target="#form">
@@ -23,7 +38,7 @@
     
         <!--Display exercises-->
         <!--The header has a margin that sets the top and bottom with the size of 3-->
-        <h3 class="text-center my-3">Exercises</h3>
+        <h3 class="text-center my-3" id="exercisesH3">Exercises</h3>
         <div id="exercises"> </div>
         
         <!--The modal-->
