@@ -16,16 +16,19 @@
     color: white;
 }
 
-/*For the error message in the form*/
+/*-----For the error message in the form-----*/
 #msg, #msg2, #msg3, #msg4{
     color: red;
 }
 
+/*-----Home page and general content-----*/
+/*The top header of each muscle group page in the home page*/
 .Muscles h1{
     font-family: fantasy;
     background-color: #4ed6ee;
 }
 
+/*Each muscle being listed*/
 .Muscles ul li{
     font-family: fantasy;
 }
@@ -37,7 +40,7 @@ body {
     overflow: hidden;
 }
 
-/*The following 5 are for the navbar*/
+/*-----The following 7 are for the navbar-----*/
 nav{
     display: flex;
     padding: 2% 6%;
@@ -84,6 +87,7 @@ nav .fa{
     display: none;
 }
 
+/*-----The app which shows the exercises-----*/
 /*The app that adds, displays, delete, and updates content*/
 .app{
     background-color: #fff;
@@ -95,6 +99,7 @@ nav .fa{
     margin-left: 100px;
 }
 
+/*The section for the span which adds exercises*/
 #addExercise{
     display: flex;
     justify-content: space-between;
@@ -105,13 +110,14 @@ nav .fa{
     cursor: pointer;
 }
 
+/*The button for adding the exercise*/
 .fa-plus{
     background-color: #4ed6ee;
     padding: 3px;
     border-radius: 3px;
 }
 
-/*The following 2 create cards for our tasks*/
+/*-----The following 2 create cards for our exercises and the other 2 are its contents-----*/
 /*This one is the foundation*/
 #exercises {
     display: grid;
@@ -136,10 +142,12 @@ nav .fa{
     gap: 20px;
 }
 
+/*The delete and edit options icons*/
 #exercises div .options i{
     cursor: pointer;
 }
 
+/*-----This is for phones-----*/
 @media only screen and (max-width: 980px) {
     #home{
         align-items: center;
