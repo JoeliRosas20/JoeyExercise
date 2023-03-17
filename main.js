@@ -14,6 +14,12 @@ let back = document.getElementById("back")
 let navLinks = document.getElementById("navLinks")
 let data = [];
 
+//Dark mode
+darkMode = () =>{
+    var e = document.body
+    e.classList.toggle("dark-mode")
+}
+
 //The start of the form sending the data
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
