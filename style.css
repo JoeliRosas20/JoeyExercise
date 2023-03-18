@@ -4,13 +4,15 @@
     background-color: black;
     color: white;
 }
-
 /*Dark mode for the section that shows exercises*/
 .dark-mode .app{
     background-color: black;
     color: white;
 }
-
+/*The cards showing each exercise*/
+#exercises{
+    color: black;
+}
 /*Dark mode for the nav bar*/
 .dark-mode .nav-links ul li a{
     color: white;
@@ -27,12 +29,13 @@
     font-family: fantasy;
     background-color: #4ed6ee;
 }
-
 /*Each muscle being listed*/
 .Muscles ul li{
     font-family: fantasy;
+    /*background-color: #f44336;*/
 }
 
+/*-----The body-----*/
 body {
     font-family: sans-serif;
     margin: 0 50px;
@@ -47,12 +50,11 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
-
+/*Where the links to navigate to are*/
 .nav-links{
     flex: 1;
     text-align: right;
 }
-
 /*This puts the links on the right side*/
 .nav-links ul li{
     list-style: none;
@@ -60,14 +62,13 @@ nav{
     padding: 8px 12px;
     position: relative;
 }
-
 /*This removes the blue line and blue words*/
 .nav-links ul li a{
     color: black;
     text-decoration: none;
     font-size: 30px;
 }
-
+/*For the red line that appears once the mouse hovers over it*/
 .nav-links ul li::after{
     content: '';
     width: 0%;
@@ -81,7 +82,6 @@ nav{
 .nav-links ul li:hover::after{
     width: 100%;
 }
-
 /*The icons will not be seen in desktop mode*/
 nav .fa{
     display: none;
@@ -98,7 +98,6 @@ nav .fa{
     padding: 15px;
     margin-left: 100px;
 }
-
 /*The section for the span which adds exercises*/
 #addExercise{
     display: flex;
@@ -109,7 +108,6 @@ nav .fa{
     border-radius: 5px;
     cursor: pointer;
 }
-
 /*The button for adding the exercise*/
 .fa-plus{
     background-color: #4ed6ee;
@@ -124,7 +122,6 @@ nav .fa{
     grid-template-columns: 1fr;
     gap: 14px;
 }
-
 /*These are for the cards */
 #exercises div{
     border: 3px solid #4ed6ee;
@@ -134,14 +131,12 @@ nav .fa{
     display: grid;
     gap: 4px;
 }
-
 /*The delete and edit options*/
 #exercises div .options{
     justify-self: center;
     display: flex;
     gap: 20px;
 }
-
 /*The delete and edit options icons*/
 #exercises div .options i{
     cursor: pointer;
@@ -164,6 +159,13 @@ nav .fa{
     #homePage ul li{
         font-size: 40px;
     }
+    
+    #darkModeBtn{
+        font-size: 40px;
+        margin: 5px;
+    }
+
+    /*-----NavBar-----*/
     /*These are the links to the other pages*/
     .nav-links ul li{
         display: block;
@@ -209,5 +211,22 @@ nav .fa{
     }
     #exercises div{
         font-size: 40px;
+    }
+    #modal-dialog{
+        margin: 40px;
+        font-size: 40px;
+    }
+    #modal-dialog #modal-content{
+        width: 700px;
+    }
+    #modalLabel{
+        font-size: 45px;
+    }
+    #textInput, #setsInput, #repsInput, #poundsInput{
+        height: 60px;
+        font-size: 35px;
+    }
+    #edit, #add{
+        font-size: 30px;
     }
 }
