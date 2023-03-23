@@ -33,16 +33,16 @@ let formValidation = () => {
     let set = setsInput.value;
     let rep = repsInput.value;
     let pound = poundsInput.value;
-    //Is it blank
+    //Is it blank?
     let textIsEmpty = text === ""
     let repIsEmpty = rep === ""
     let setIsEmpty = set === ""
     let poundIsEmpty = pound === ""
-    //Is a negative
+    //Is a negative?
     let setIsNegative = set < 0
     let repIsNegative = rep < 0
     let poundIsNegative = pound < 0
-    //Is not a number
+    //Is not a number?
     let setNotANum = isNaN(set)
     let repNotANum = isNaN(rep)
     let poundNotANum = isNaN(pound)
