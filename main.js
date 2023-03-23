@@ -12,6 +12,9 @@ let exercises = document.getElementById("exercises")
 let bicep = document.getElementById("bicep")
 let back = document.getElementById("back")
 let navLinks = document.getElementById("navLinks")
+let modal = document.getElementById("imgModal")
+
+//Array for storing exercises
 let data = [];
 
 //Dark mode
@@ -121,6 +124,7 @@ let createTasks = () =>{
             <span class="options">
                 <i onClick="editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i> 
                 <i onClick="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
+                <i onClick="showImage()" class="fas fa-image" id="imgBtn" data-bs-toggle="modal" data-bs-target="#imgModal"></i>
             </span>
         </div>
         `)
@@ -182,6 +186,18 @@ let hideMenu = () =>{
     console.log("Local storage")
     console.log(data)
 })();
+
+//To show an image
+let showImage = () =>{
+    exercises.innerHTML += `
+    <div id="imgModal" class="modal fade">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Image coming soon</p>
+            </div>
+        </div>
+    `
+}
 
 let pushDataToStorage = () =>{
     if(document.URL.includes("biceps.html")){
