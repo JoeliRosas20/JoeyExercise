@@ -111,7 +111,7 @@ let acceptData = () =>{
 }
 
 //Creating the tasks so it can be displayed
-let createTasks = () =>{
+let createTasks = () =>{ //onClick="showImage()" id="imgBtn" data-bs-toggle="modal" data-bs-target="#imgModal"
     exercises.innerHTML = "";
     data.map((x,y) =>{
         return (exercises.innerHTML += `
@@ -124,7 +124,7 @@ let createTasks = () =>{
             <span class="options">
                 <i onClick="editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i> 
                 <i onClick="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
-                <i onClick="showImage()" class="fas fa-image" id="imgBtn" data-bs-toggle="modal" data-bs-target="#imgModal"></i>
+                <i onClick="showImage()" class="fas fa-image" ></i>
             </span>
         </div>
         `)
@@ -189,14 +189,16 @@ let hideMenu = () =>{
 
 //To show an image
 let showImage = () =>{
-    exercises.innerHTML += `
+    /*exercises.innerHTML += `
     <div id="imgModal" class="modal fade">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <p>Image coming soon</p>
             </div>
         </div>
-    `
+    `*/
+    alert("Test")
+    console.log("alert")
 }
 
 let pushDataToStorage = () =>{
