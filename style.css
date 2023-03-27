@@ -1,4 +1,4 @@
-/*-----Dark mode tags-----*/
+/*-----DARK MODE TAGS-----*/
 /*Dark mode for all pages*/
 .dark-mode{
     background-color: black;
@@ -23,7 +23,7 @@
     color: red;
 }
 
-/*-----Home page and general content-----*/
+/*-----HOME PAGE AND GENERAL CONTENT-----*/
 /*The top header of each muscle group page in the home page*/
 .Muscles h1{
     font-family: fantasy;
@@ -35,7 +35,7 @@
     /*background-color: #f44336;*/
 }
 
-/*-----The body-----*/
+/*-----THE BODY-----*/
 body {
     font-family: sans-serif;
     margin: 0 50px;
@@ -43,7 +43,7 @@ body {
     overflow: hidden;
 }
 
-/*-----The following 7 are for the navbar-----*/
+/*-----THE FOLLOWING 7 ARE FOR THE NAVBAR-----*/
 nav{
     display: flex;
     padding: 2% 6%;
@@ -78,7 +78,7 @@ nav{
     margin: auto;
     transition: 0.5s;
 }
-
+/*For the hover to disappear*/
 .nav-links ul li:hover::after{
     width: 100%;
 }
@@ -120,7 +120,7 @@ nav .fa{
     border-radius: 3px;
 }
 
-/*-----The following 2 create cards for our exercises and the other 2 are its contents-----*/
+/*-----THE FOLLOWING 2 CREATE CARDS FOR OUR EXERCISES AND THE OTHER 2 ARE ITS CONTENTS-----*/
 /*This one is the foundation*/
 #exercises {
     display: grid;
@@ -148,9 +148,10 @@ nav .fa{
 }
 
 
-/*-----This is for phones-----*/
+/*-----THIS IS FOR PHONES-----*/
 /*To get the measurement of this, you need to check the height width of the hmtl tag*/
 @media only screen and (max-width: 980px) {
+    /*-----HOME PAGE-----*/
     #home{
         align-items: center;
     }
@@ -167,12 +168,13 @@ nav .fa{
         font-size: 40px;
     }
     
+    /*-----DARK MODE-----*/
     #darkModeBtn{
         font-size: 40px;
         margin: 5px;
     }
 
-    /*-----NavBar-----*/
+    /*-----NAVBAR-----*/
     /*These are the links to the other pages*/
     .nav-links ul li{
         display: block;
