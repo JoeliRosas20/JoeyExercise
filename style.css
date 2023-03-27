@@ -147,7 +147,6 @@ nav .fa{
     cursor: pointer;
 }
 
-
 /*-----THIS IS FOR PHONES-----*/
 /*To get the measurement of this, you need to check the height width of the hmtl tag*/
 @media only screen and (max-width: 980px) {
