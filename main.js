@@ -117,14 +117,14 @@ let createTasks = () =>{ //onClick="showImage()" id="imgBtn" data-bs-toggle="mod
         return (exercises.innerHTML += `
         <div id=${y}>
             <span class="fw-bold">${x.name}</span>
-            <span class="small text-secondary">Sets: ${x.set}</span>
-            <span class="small text-secondary">Reps: ${x.rep}</span>
-            <span class="small text-secondary">Pounds: ${x.pound}</span>
+            Sets:<span class="small text-secondary">${x.set}</span>
+            Reps:<span class="small text-secondary">${x.rep}</span>
+            Pounds:<span class="small text-secondary">${x.pound}</span>
 
             <span class="options">
                 <i onClick="editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i> 
                 <i onClick="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
-                <i onClick="showImage()" class="fas fa-image" ></i>
+                <i onClick="showImage()" data-bs-toggle="modal" data-bs-target="#image" class="fas fa-image" ></i>
             </span>
         </div>
         `)
@@ -192,12 +192,12 @@ let showImage = () =>{
     /*exercises.innerHTML += `
     <div id="imgModal" class="modal fade">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                
                 <p>Image coming soon</p>
             </div>
         </div>
     `*/
-    alert("Test")
+    //alert("Test")
     console.log("alert")
 }
 

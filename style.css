@@ -87,7 +87,7 @@ nav .fa{
     display: none;
 }
 
-/*-----The app which shows the exercises-----*/
+/*-----THE APP WHICH SHOWS THE EXERCISES-----*/
 /*The app that adds, displays, delete, and updates content*/
 .app{
     background-color: #fff;
@@ -97,7 +97,12 @@ nav .fa{
     border-radius: 8px;
     padding: 15px;
     margin-left: 100px;
+    overflow-y: scroll;
 }
+/*So the scrollbar cannot be seen*/
+.app::-webkit-scrollbar {
+    width: 0 !important;
+  }
 /*The section for the span which adds exercises*/
 #addExercise{
     display: flex;
@@ -141,6 +146,7 @@ nav .fa{
 #exercises div .options i{
     cursor: pointer;
 }
+
 
 /*-----This is for phones-----*/
 /*To get the measurement of this, you need to check the height width of the hmtl tag*/
