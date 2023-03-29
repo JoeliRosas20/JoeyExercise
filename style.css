@@ -40,7 +40,7 @@ body {
     font-family: sans-serif;
     margin: 0 50px;
     background-color: #e5e5e5;
-    overflow: hidden;
+    /*overflow: hidden;This removes the scrolling*/
 }
 
 /*-----THE FOLLOWING 7 ARE FOR THE NAVBAR-----*/

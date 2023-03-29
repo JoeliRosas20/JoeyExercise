@@ -99,19 +99,20 @@ let formValidation = () => {
 
 //Accept the date filled in the form unto the 
 let acceptData = () =>{
+    //Convert the image into string here
     data.push({
         name: textInput.value,
         set: setsInput.value,
         rep: repsInput.value,
         pound: poundsInput.value,
-    })
+    })//"image: input.value" is the next
     pushDataToStorage()
     console.log(data)
     createTasks()
 }
 
 //Creating the tasks so it can be displayed
-let createTasks = () =>{ //onClick="showImage()" id="imgBtn" data-bs-toggle="modal" data-bs-target="#imgModal"
+let createTasks = () =>{  
     exercises.innerHTML = "";
     data.map((x,y) =>{
         return (exercises.innerHTML += `
@@ -197,10 +198,9 @@ let showImage = () =>{
             </div>
         </div>
     `*/
-    //alert("Test")
-    console.log("alert")
 }
 
+//Stores data array to local storage
 let pushDataToStorage = () =>{
     if(document.URL.includes("biceps.html")){
         console.log("Bicep")
@@ -211,3 +211,18 @@ let pushDataToStorage = () =>{
         localStorage.setItem("back", JSON.stringify(data))
     }
 }
+
+//Image Test
+document.querySelector("#myFileInput").addEventListener("change", function(){//This function retrieves the image from the file
+    const reader = new FileReader//Converts an image into a data url
+    reader.addEventListener("load", () =>{
+        localStorage.setItem("recent-image", reader.result)//The image is stored in the local storage
+    })
+    reader.readAsDataURL(this.files[0])//This gets the image from index 0 in the list
+});
+document.addEventListener("DOMContentLoaded", () =>{//Get the images from the local storage
+    const recentImageDataUrl = localStorage.getItem("recent-image")
+    if(recentImageDataUrl){
+        document.querySelector("#imgPreview").setAttribute("src", recentImageDataUrl)
+    }
+})
