@@ -3,6 +3,7 @@ let textInput = document.getElementById("textInput");
 let setsInput = document.getElementById("setsInput");
 let repsInput = document.getElementById("repsInput");
 let poundsInput = document.getElementById("poundsInput");
+let image = " ";
 let msg = document.getElementById("msg")
 let msg2 = document.getElementById("msg2")
 let msg3 = document.getElementById("msg3")
@@ -13,6 +14,7 @@ let bicep = document.getElementById("bicep")
 let back = document.getElementById("back")
 let navLinks = document.getElementById("navLinks")
 let modal = document.getElementById("imgModal")
+let pic = " "
 
 //Array for storing exercises
 let data = [];
@@ -22,6 +24,15 @@ darkMode = () =>{
     var e = document.body
     e.classList.toggle("dark-mode")
 }
+
+form.querySelector("#imgInput").addEventListener("change", function(){
+    console.log("gettingImg-when is this called 2")
+    const reader = new FileReader
+    reader.readAsDataURL(this.files[0])
+    reader.addEventListener("load", () =>{
+        image = reader.result;
+    })
+})
 
 //The start of the form sending the data
 form.addEventListener("submit", (e) =>{
@@ -97,15 +108,30 @@ let formValidation = () => {
     }
 }
 
+let gettingImg = () =>{
+    console.log("gettingImg-when is this called")
+    form.querySelector("#imgInput").addEventListener("change", function(){
+        console.log("gettingImg-when is this called 2")
+        const reader = new FileReader
+        reader.readAsDataURL(this.files[0])
+        reader.addEventListener("load", () =>{
+            image = reader.result
+        })
+    })
+}
+
 //Accept the date filled in the form unto the 
 let acceptData = () =>{
-    //Convert the image into string here
+    console.log("acceptData-called")
+    //gettingImg()
+    console.log("acceptData-array push is next")
     data.push({
         name: textInput.value,
         set: setsInput.value,
         rep: repsInput.value,
         pound: poundsInput.value,
-    })//"image: input.value" is the next
+        pic: image,
+    })//"image: image" is the next
     pushDataToStorage()
     console.log(data)
     createTasks()
@@ -125,10 +151,15 @@ let createTasks = () =>{
             <span class="options">
                 <i onClick="editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i> 
                 <i onClick="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
-                <i onClick="showImage()" data-bs-toggle="modal" data-bs-target="#image" class="fas fa-image" ></i>
+                <i onClick="showImage(this)" data-bs-toggle="modal" data-bs-target="#image" class="fas fa-image"></i>
             </span>
         </div>
         `)
+    })
+    data.forEach(value =>{
+        console.log(value)
+        console.log(value.name)
+        showImage(value.name)
     })
     resetForm()
 }
@@ -176,53 +207,57 @@ let hideMenu = () =>{
 (()=>{
     //data = JSON.parse(localStorage.getItem("bicep")) || [];
     if(document.URL.includes("biceps.html")){
-        console.log("Bicep")
         data = JSON.parse(localStorage.getItem("bicep")) || [];
     }
     else if (document.URL.includes("back.html")){
-        console.log("Back")
         data = JSON.parse(localStorage.getItem("back")) || [];
     }
     createTasks()
-    console.log("Local storage")
-    console.log(data)
 })();
 
 //To show an image
-let showImage = () =>{
-    /*exercises.innerHTML += `
-    <div id="imgModal" class="modal fade">
-            <div class="modal-content">
-                
-                <p>Image coming soon</p>
-            </div>
-        </div>
-    `*/
+let showImage = (e) =>{
+    console.log(e)
+    /*document.addEventListener("DOMContentLoaded", () =>{
+        document.querySelector("#showExercise").setAttribute("src", e)
+    })*/
 }
 
 //Stores data array to local storage
 let pushDataToStorage = () =>{
     if(document.URL.includes("biceps.html")){
-        console.log("Bicep")
+        //console.log("Bicep")
         localStorage.setItem("bicep", JSON.stringify(data))
     }
     else if (document.URL.includes("back.html")){
-        console.log("Back")
+        //console.log("Back")
         localStorage.setItem("back", JSON.stringify(data))
     }
 }
 
 //Image Test
 document.querySelector("#myFileInput").addEventListener("change", function(){//This function retrieves the image from the file
+    console.log("1)First function")//
     const reader = new FileReader//Converts an image into a data url
+    console.log("2)First function-FileReader called")
     reader.addEventListener("load", () =>{
+        console.log("5)First function-EventListener called")
         localStorage.setItem("recent-image", reader.result)//The image is stored in the local storage
+        console.log("6)First function-Setting the image on the site")
     })
+    console.log("3)First function-Left the EvenListener")
     reader.readAsDataURL(this.files[0])//This gets the image from index 0 in the list
+    console.log("4)First function-Finished reading the data url")
 });
+
 document.addEventListener("DOMContentLoaded", () =>{//Get the images from the local storage
+    console.log("1)Second function")//It appears this gets called for
     const recentImageDataUrl = localStorage.getItem("recent-image")
+    console.log("2)Second function-Local Storage called")
     if(recentImageDataUrl){
+        console.log("3)Second function-Checking if there is a data url in the local storage")
         document.querySelector("#imgPreview").setAttribute("src", recentImageDataUrl)
+        console.log("4)Second function-Looks like there is a data url")
     }
+    console.log("5)Second function-Leaving with or without an image")
 })
