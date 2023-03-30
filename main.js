@@ -135,6 +135,7 @@ let acceptData = () =>{
     pushDataToStorage()
     console.log(data)
     createTasks()
+    showImage()
 }
 
 //Creating the tasks so it can be displayed
@@ -151,15 +152,9 @@ let createTasks = () =>{
             <span class="options">
                 <i onClick="editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i> 
                 <i onClick="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
-                <i onClick="showImage(this)" data-bs-toggle="modal" data-bs-target="#image" class="fas fa-image"></i>
             </span>
         </div>
         `)
-    })
-    data.forEach(value =>{
-        console.log(value)
-        console.log(value.name)
-        showImage(value.name)
     })
     resetForm()
 }
@@ -214,14 +209,6 @@ let hideMenu = () =>{
     }
     createTasks()
 })();
-
-//To show an image
-let showImage = (e) =>{
-    console.log(e)
-    /*document.addEventListener("DOMContentLoaded", () =>{
-        document.querySelector("#showExercise").setAttribute("src", e)
-    })*/
-}
 
 //Stores data array to local storage
 let pushDataToStorage = () =>{
