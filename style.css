@@ -13,7 +13,10 @@
 .dark-mode .nav-links ul li a{
     color: white;
 }
-.dark-mode #form
+/*The font of the form in dark mode*/
+.dark-mode #form{
+    color: black;
+}
 /*The cards showing each exercise, specifically the font*/
 #exercises{
     color: black;
