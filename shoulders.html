@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!--The navigation bar-->
     <nav>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
@@ -26,8 +27,14 @@
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
+
+    <!--The dark mode button-->
+    <button onclick="darkMode()" id="darkModeBtn">Dark Mode</button>
     
+    <!--The app-->
     <div class="app">
+
+        <!--Header-->
         <h1 class="mb-3" id="muscleTitle">Shoulders</h1>
 
         <!--Add an exercise-->
@@ -45,11 +52,11 @@
         <!--This is a modal that fades when it opens and closes. It's ID is form. It cannot be highlighted when the tab button is pressed. It is accessible friendly (ARIA) and its hidden by default.-->
         <form class="modal fade" id="form" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
             <!--This sets the proper margin and width of the modal.-->
-            <div class="modal-dialog">
+            <div class="modal-dialog" id="modal-dialog">
                 <!--This styles the modal. Styling the boder and background-color-->
-                <div class="modal-content">
+                <div class="modal-content" id="modal-content">
                     <!--Header or Title-->
-                    <div class="modal-header">
+                    <div class="modal-header" id="modal-header">
                         <h5 class="modal-title" id="modalLabel">Add New Task</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
