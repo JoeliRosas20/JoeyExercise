@@ -201,6 +201,9 @@ nav .fa{
     .nav-links ul{
         padding: 30px;
     }
+    .dark-mode nav .fa-bars{
+        color: white;
+    }
     .app{
         width: 800px;
         height: 1100px;
