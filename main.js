@@ -177,6 +177,21 @@ let hideMenu = () =>{
     else if (document.URL.includes("back.html")){
         data = JSON.parse(localStorage.getItem("back")) || [];
     }
+    else if (document.URL.includes("triceps.html")){
+        localStorage.setItem("tricep", JSON.stringify(data))
+    }
+    else if (document.URL.includes("chest.html")){
+        localStorage.setItem("chest", JSON.stringify(data))
+    }
+    else if (document.URL.includes("legs.html")){
+        localStorage.setItem("leg", JSON.stringify(data))
+    }
+    else if (document.URL.includes("abs.html")){
+        localStorage.setItem("ab", JSON.stringify(data))
+    }
+    else if (document.URL.includes("shoulders.html")){
+        localStorage.setItem("shoulder", JSON.stringify(data))
+    }
     createTasks()
 })();
 
@@ -187,5 +202,20 @@ let pushDataToStorage = () =>{
     }
     else if (document.URL.includes("back.html")){
         localStorage.setItem("back", JSON.stringify(data))
+    }
+    else if (document.URL.includes("triceps.html")){
+        localStorage.setItem("tricep", JSON.stringify(data))
+    }
+    else if (document.URL.includes("chest.html")){
+        localStorage.setItem("chest", JSON.stringify(data))
+    }
+    else if (document.URL.includes("legs.html")){
+        localStorage.setItem("leg", JSON.stringify(data))
+    }
+    else if (document.URL.includes("abs.html")){
+        localStorage.setItem("ab", JSON.stringify(data))
+    }
+    else if (document.URL.includes("shoulders.html")){
+        localStorage.setItem("shoulder", JSON.stringify(data))
     }
 }
