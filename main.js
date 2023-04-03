@@ -178,19 +178,19 @@ let hideMenu = () =>{
         data = JSON.parse(localStorage.getItem("back")) || [];
     }
     else if (document.URL.includes("triceps.html")){
-        localStorage.setItem("tricep", JSON.stringify(data))
+        data = JSON.parse(localStorage.getItem("tricep")) || [];
     }
     else if (document.URL.includes("chest.html")){
-        localStorage.setItem("chest", JSON.stringify(data))
+        data = JSON.parse(localStorage.getItem("chest")) || [];
     }
     else if (document.URL.includes("legs.html")){
-        localStorage.setItem("leg", JSON.stringify(data))
+        data = JSON.parse(localStorage.getItem("leg")) || [];
     }
     else if (document.URL.includes("abs.html")){
-        localStorage.setItem("ab", JSON.stringify(data))
+        data = JSON.parse(localStorage.getItem("ab")) || [];
     }
     else if (document.URL.includes("shoulders.html")){
-        localStorage.setItem("shoulder", JSON.stringify(data))
+        data = JSON.parse(localStorage.getItem("shoulder")) || [];
     }
     createTasks()
 })();
