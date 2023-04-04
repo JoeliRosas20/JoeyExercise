@@ -25,12 +25,14 @@ darkMode = () =>{
 
 //The start of the form sending the data
 form.addEventListener("submit", (e) =>{
+    console.log("first")
     e.preventDefault();
     formValidation();
 })
 
 //Validating what is filled in the form
 let formValidation = () => {
+    console.log("second")
     //Value
     let text = textInput.value;
     let set = setsInput.value;
@@ -99,6 +101,7 @@ let formValidation = () => {
 
 //Accept the date filled in the form unto the 
 let acceptData = () =>{
+    console.log("third")
     data.push({
         name: textInput.value,
         set: setsInput.value,
@@ -111,6 +114,7 @@ let acceptData = () =>{
 
 //Creating the tasks so it can be displayed
 let createTasks = () =>{  
+    console.log("fifth")
     exercises.innerHTML = "";
     data.map((x,y) =>{
         return (exercises.innerHTML += `
@@ -197,6 +201,7 @@ let hideMenu = () =>{
 
 //Stores data array to local storage
 let pushDataToStorage = () =>{
+    console.log("fourth")
     if(document.URL.includes("biceps.html")){
         localStorage.setItem("bicep", JSON.stringify(data))
     }
